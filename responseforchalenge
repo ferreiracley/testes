@@ -1,0 +1,31 @@
+As was said in the exercise there are several ways to solve the problem the first and most viable that seems to work is to access through the client A the Server A and through the server A access server B. 
+
+Commands 
+
+Client A ~$ SSH username@(IP or Server A) -p portnumber 
+
+Server A ~$ ssh username@(IP or Server B) -p portnumber
+
+As all servers and clients do not have the X service installed it will be necessary to install a package called "links" to access the service from the Server A terminal
+
+~$ apt install links 
+
+From the installation is only access the http service by typing the address in the teminal as the example below 
+
+~$ links http://url.com.br:8000 
+
+If the service accesses or the site in question the service is on air
+
+If it is necessary to check if only the port is being used and if it is in use will be necessary to use the netstat command 
+
+~$ sudo netstat -tlpn | grep 8000 
+
+From this command we will have the result if this port is active or not and the number of your PID.
+
+Improvements 
+
+1- Implement the TLS and HTTPS protocol in the connectivity of the service so that it is safer and protected against invasions and attacks, because once you improve the encryption you prevent attacks and information theft giving greater instability to the service 
+
+2- Facilitating access with a secure vpn via SSO authentication or encryption key to a fixed ip gateway would facilitate maintenance in case of environmental disasters
+
+Translated with www.DeepL.com/Translator (free version)
